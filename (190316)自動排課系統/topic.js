@@ -1,9 +1,6 @@
-var topic = ["尚未開學",
-             "國定假日",
-             "環境準備",
-             "隨機性",
-             "重複性",
-             "blablabla..."];
+var topic = ["毀滅來臨，喇叭作響",
+             "狂亂的黃金鄉",
+             "太陽熊熊燃燒之時"];
 //var startDate = new Date();
 
 function setMonthAndDay(startMonth, startDay){

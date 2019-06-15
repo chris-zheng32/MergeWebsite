@@ -13,13 +13,13 @@ $(document).ready(function(){ // => $(document)表示等整份文件載入完成
         $("H1").text($("#theFirst > li").eq(randomNum).text());
         switch(randomNum){
             case 0:
-                $("#foodImg > p").html("<img src=\"(190316)RandomSelector\/擷取55.jpg\">");
+                $("#foodImg > p").html("<img src=\"(190316)RandomSelector\/pic\/b1.png\">");
                 break;
             case 1:
-                $("#foodImg > p").html("<img src=\"(190316)RandomSelector\/擷取56.jpg\">");
+                $("#foodImg > p").html("<img src=\"(190316)RandomSelector\/pic\/x1.jpg\">");
                 break;
             case 2:
-                $("#foodImg > p").html("<img src=\"(190316)RandomSelector\/擷取57.jpg\">");
+                $("#foodImg > p").html("<img src=\"(190316)RandomSelector\/pic\/l1.jpg\">");
                 break;     
             default:
                 break;

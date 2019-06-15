@@ -282,6 +282,7 @@ function executing() {
                     var snd2 = new Audio("final_Project/sound_effect/cheers2.mp3");
                     snd2.play();
                 }, 500);
+                $("#theHighScore").text("High Score: "+highScore);
             }
             clearInterval(gaming);
         }

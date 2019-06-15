@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,18 +8,16 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>排活動系統</title>
+    <title>About Me</title>
 
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="(190316)自動排課系統/style.css">
 
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet">
 </head>
 
 <body>
-
     <header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <a class="navbar-brand" href="#">Carousel</a>
@@ -36,7 +34,7 @@
                         <a class="nav-link" href="RandomSelect.html">RandomSelect</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#">排活動系統</a>
+                        <a class="nav-link" href="autoArrangeSystem.html">排活動系統</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="psychologicalTest.html">心理測驗</a>
@@ -51,7 +49,7 @@
                         <a class="nav-link" href="Dodge_or_Catch.html">Dodge or Catch</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about_me.html">About Me</a>
+                        <a class="nav-link disabled" href="#">About Me</a>
                     </li>
                 </ul>
                 <form class="form-inline mt-2 mt-md-0">
@@ -61,31 +59,29 @@
             </div>
         </nav>
     </header>
-
     <main role="main">
         <div class="container marketing">
-            <hr class="featurette-divider">
+            <div class="row">
+                <div class="col-lg-4">
 
-            <h1>時間表</h1>
-            <input id="Month" type="text">
-            <input id="Day" type="text">
-            <input id="submitButton" type="button" value="設定日期">
-
-            <input id="NewActivity" type="text">
-            <input id="addNewActivity" type="button" value="新增活動">
-
-            <table id="courseTable"></table>
-
-            <div id="textBlock">
-                <p></p>
-            </div>
-
-            <hr class="featurette-divider">
+                </div><!-- /.col-lg-4 -->
+                <div class="col-lg-4" style="margin-top: 100px;">
+                    <img class="rounded-circle" src="about_me_pic/17331032.jpg" alt="Generic placeholder image"
+                        width="140" height="140">
+                    <h2>鄭憲騰</h2>
+                    <p>學號：1051429</p>
+                    <p>元智大學資工系3年級</p>
+                    <p><a class="btn btn-secondary" href="https://www.facebook.com/Kaede32" role="button">我的Facebook
+                            &raquo;</a></p>
+                </div><!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                </div><!-- /.col-lg-4 -->
+            </div><!-- /.row -->
         </div>
 
 
         <!-- FOOTER -->
-        <footer class="container">
+        <footer class="container" style="position: relative; margin-top: 400px;">
             <p class="float-right"><a href="#">Back to top</a></p>
             <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
         </footer>
@@ -102,8 +98,7 @@
     <script src="dist/js/bootstrap.min.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
     <script src="assets/js/vendor/holder.min.js"></script>
-    <script src="(190316)自動排課系統/topic.js"></script>
-    <script src="(190316)自動排課系統/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </body>
 
 </html>
