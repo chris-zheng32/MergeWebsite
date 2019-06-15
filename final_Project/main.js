@@ -262,7 +262,7 @@ function executing() {
         $("#theScore").text("Score: " + currentScore);
         $("#remainLive").text("Remain Live: " + remainLive);
         if (remainLive == 0) {
-            var snd = new Audio("期末project/sound_effect/destruction1.mp3");
+            var snd = new Audio("final_Project/sound_effect/destruction1.mp3");
             snd.play();
             ctx.beginPath();
             ctx.rect(0, 0, 450, 630);
@@ -279,7 +279,7 @@ function executing() {
             if(highScore < currentScore){
                 highScore = currentScore;
                 setTimeout(function(){
-                    var snd2 = new Audio("期末project/sound_effect/cheers2.mp3");
+                    var snd2 = new Audio("final_Project/sound_effect/cheers2.mp3");
                     snd2.play();
                 }, 500);
             }
@@ -299,25 +299,25 @@ function isOverlapping(index) {
     if (playerGridPosition[columnIndexOfEssentialGrid[index]] == 1) {
         result = 1;
         if (playMode == 1) {
-            var snd = new Audio("期末project/sound_effect/bomb.mp3");
+            var snd = new Audio("final_Project/sound_effect/bomb.mp3");
             snd.play();
         } else if (playMode == 2) {
             var snd;
             switch (columnIndexOfEssentialGrid[index]) {
                 case 0:
-                    snd = new Audio("期末project/sound_effect/pianoC.mp3");
+                    snd = new Audio("final_Project/sound_effect/pianoC.mp3");
                     break;
                 case 1:
-                    snd = new Audio("期末project/sound_effect/pianoD.mp3");
+                    snd = new Audio("final_Project/sound_effect/pianoD.mp3");
                     break;
                 case 2:
-                    snd = new Audio("期末project/sound_effect/pianoE.mp3");
+                    snd = new Audio("final_Project/sound_effect/pianoE.mp3");
                     break;
                 case 3:
-                    snd = new Audio("期末project/sound_effect/pianoF.mp3");
+                    snd = new Audio("final_Project/sound_effect/pianoF.mp3");
                     break;
                 case 4:
-                    snd = new Audio("期末project/sound_effect/pianoG.mp3");
+                    snd = new Audio("final_Project/sound_effect/pianoG.mp3");
                     break;
             }
             snd.play();
@@ -325,7 +325,7 @@ function isOverlapping(index) {
     } else {
         result = 0;
         if(playMode == 2){
-            var snd = new Audio("期末project/sound_effect/damage4.mp3");
+            var snd = new Audio("final_Project/sound_effect/damage4.mp3");
             snd.play();
         }
     }
