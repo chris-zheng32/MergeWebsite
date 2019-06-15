@@ -16,7 +16,7 @@ $(document).ready(function(){
 
     // 擺上主角 -- 使用預設位置
     imgMain = new Image();
-    imgMain.src = "images/spriteSheet.png";
+    imgMain.src = '(190330)極簡RPG雛形製作/images/spriteSheet.png';
     currentImgMainX = 0;
     currentImgMainY = 0;
     imgMain.onload = function(){
@@ -25,9 +25,9 @@ $(document).ready(function(){
 
     // 擺上障礙物&敵人
     imgMountain = new Image();
-    imgMountain.src = "images/material.png";
+    imgMountain.src = "(190330)極簡RPG雛形製作/images/material.png";
     imgEnemy = new Image();
-    imgEnemy.src = "images/Enemy.png";
+    imgEnemy.src = "(190330)極簡RPG雛形製作/images/Enemy.png";
     imgMountain.onload = function(){
         imgEnemy.onload = function(){
             for(var x in mapArray){

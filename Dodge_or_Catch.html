@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,18 +8,16 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>極簡RPG雛形製作</title>
+    <title>Random Select</title>
 
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="(190330)極簡RPG雛形製作/style.css">
 
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet">
 </head>
 
 <body>
-
     <header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <a class="navbar-brand" href="#">Carousel</a>
@@ -42,13 +40,13 @@
                         <a class="nav-link" href="psychologicalTest.html">心理測驗</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">極簡RPG雛形製作</a>
+                        <a class="nav-link" href="simpleRPG.html">極簡RPG雛形製作</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="youtubePlaylist.html">YouTube心情點唱機</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
+                        <a class="nav-link disabled" href="#">Dodge or Catch</a>
                     </li>
                 </ul>
                 <form class="form-inline mt-2 mt-md-0">
@@ -58,23 +56,39 @@
             </div>
         </nav>
     </header>
-
     <main role="main">
         <div class="container marketing">
-            <hr class="featurette-divider">
-
-            <h1>我要去右下角</h1>
-            <div>
-                <canvas id="myCanvas" width="600" height="600"></canvas>
+            <div style="float: left; margin-left: 10px; padding-bottom: 100px; ">
+                <canvas id="myCanvas" width="450" height="630" style="border: 2px solid #6d6d6d;"></canvas>
                 <p id="talkBox"></p>
             </div>
-
-            <hr class="featurette-divider">
+            <div id="theScoreArea"
+                style="border: 2px solid #6d6d6d; margin-left: 530px; margin-top: 30px; padding:10px;">
+                <p id="theScore" style="font-size: 16pt; font-family: 'Comic Sans MS';">
+                    Score: 0
+                </p>
+                <p id="remainLive" style="font-size: 16pt; font-family: 'Comic Sans MS';">
+                    Remain Live: 0
+                </p>
+                <p id="theHighScore" style="font-size: 16pt; font-family: 'Comic Sans MS';">
+                    High Score: 0
+                </p>
+            </div>
+            <div id="theStyleChoose"
+                style="border: 2px solid #6d6d6d; margin-left: 530px; margin-top: 30px; padding: 20px; ">
+                <p style="font-weight: bold">請選擇樣式：</p>
+                <input type="radio" name="theStyle" id="theStyle" value="3"><label>3排</label>
+                <input type="radio" name="theStyle" id="theStyle" value="5"><label>5排</label>
+                <br>
+                <p style="font-weight: bold">請選擇模式：</p>
+                <input type="radio" name="theMode" value="1"><label>躲</label>
+                <input type="radio" name="theMode" value="2"><label>接</label>
+            </div>
         </div>
 
 
         <!-- FOOTER -->
-        <footer class="container">
+        <footer class="container" style="position: relative; margin-top: 400px;">
             <p class="float-right"><a href="#">Back to top</a></p>
             <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
         </footer>
@@ -83,16 +97,14 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="assets/js/vendor/popper.min.js"></script>
     <script src="dist/js/bootstrap.min.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
     <script src="assets/js/vendor/holder.min.js"></script>
-    <script src="(190330)極簡RPG雛形製作/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="期末project/main.js"></script>
 </body>
 
 </html>
-
