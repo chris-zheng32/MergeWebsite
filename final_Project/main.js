@@ -27,6 +27,9 @@ var gameoverAnime;
 var gameoverAnimeStatus = 0;
 var gameoverString = ['G', 'A', 'M', 'E', 'O', 'V', 'E', 'R'];
 var indexOfGameoverString = 0;
+var playTime = 0;
+
+var ytPlayer;
 
 var theColor = {
     green: '#00FF00',
@@ -167,14 +170,50 @@ $(document).keydown(function (event) {
     }
 });
 
+function onYouTubeIframeAPIReady() {
+    ytPlayer = new YT.Player("player",
+        {
+            height: "1",
+            width: "1",
+            videoId: "xOlPIHIe2rM",
+            playerVars: {
+                "autoplay": 0, //是否自動播放
+                "controls": 0, //是否顯示控制項
+                "start": 0, //開始播放秒數
+                "end": 240, //結束播放秒數
+                "showinfo": 0, //上方是否顯示影片標題
+                "rel": 0, //結束時是否顯示相關影片
+                "iv_load_policy": 3 //是否顯示置入的行銷連結
+            },
+            events: {
+                "onReady": onPlayerReady, //下方的function名稱
+                "onStateChange": onPlayerStateChange, //下方的function名稱
+            }
+        }
+    );
+}
+
+function onPlayerReady(event) {
+
+}
+function onPlayerStateChange(event) { }
+
 function InGame() {
     ctx.beginPath();
     ctx.rect(0, 0, 450, 630);
     ctx.fillStyle = theColor.white;
     ctx.fill();
     ctx.closePath();
+    if (playTime == 0) {
+        ytPlayer.playVideo();
+    } else if(playTime > 0 ){
+        ytPlayer.seekTo(0);
+        ytPlayer.playVideo();
+    }
+    playTime++;
     gaming = setInterval(executing, timeInterval);
 }
+
 
 function executing() {
     //ctx.clearRect(0, 0, ctx.width, ctx.height);
@@ -291,6 +330,7 @@ function executing() {
         $("#remainLive").text("Remain Live: " + remainLive);
         if (remainLive == 0) {
             //ctx.clearRect(0 , 0 , 450, 630);
+            ytPlayer.pauseVideo();
             var snd = new Audio("final_Project/sound_effect/destruction1.mp3");
             snd.play();
             var pImg = new Image();
