@@ -36,13 +36,21 @@ var theColor = {
     white: '#FFFFFF'
 }
 
+var imgSrc = {
+    player1: 'final_Project/pic/player1.png',
+    player2: 'final_Project/pic/player2.png',
+    player3: 'final_Project/pic/player3.png',
+    player_out: 'final_Project/pic/player_out.png'
+}
+var playerImg = imgSrc.player1;
+
 var playerColor = theColor.green;
 
 $(document).ready(function () {
     ctx = $("#myCanvas")[0].getContext('2d');
     ctx.font = "15pt Arial";
     ctx.fillStyle = theColor.black;
-    ctx.fillText("Press SPACE to restart", 120, 300);
+    ctx.fillText("Press SPACE to start", 130, 300);
     //InGame();
 });
 
@@ -62,11 +70,16 @@ $(document).keydown(function (event) {
                         indexOfPlayerPosition = 0;
                     }
                 }
-                ctx.beginPath();
+                var pImg = new Image();
+                pImg.src = playerImg;
+                pImg.onload = function () {
+                    ctx.drawImage(pImg, (0 + 90 * indexOfPlayerPosition), 540, 90, 90);
+                };
+                /*ctx.beginPath();
                 ctx.rect((0 + 90 * indexOfPlayerPosition), 540, 90, 90);
                 ctx.fillStyle = playerColor;
                 ctx.fill();
-                ctx.closePath();
+                ctx.closePath();*/
                 ctx.beginPath();
                 ctx.rect((0 + 90 * (indexOfPlayerPosition + 1)), 540, 90, 90);
                 ctx.fillStyle = '#FFFFFF';
@@ -87,11 +100,16 @@ $(document).keydown(function (event) {
                         indexOfPlayerPosition = 4;
                     }
                 }
-                ctx.beginPath();
+                var pImg = new Image();
+                pImg.src = playerImg;
+                pImg.onload = function () {
+                    ctx.drawImage(pImg, (0 + 90 * indexOfPlayerPosition), 540, 90, 90);
+                };
+                /*ctx.beginPath();
                 ctx.rect((0 + 90 * indexOfPlayerPosition), 540, 90, 90);
                 ctx.fillStyle = playerColor;
                 ctx.fill();
-                ctx.closePath();
+                ctx.closePath();*/
                 ctx.beginPath();
                 ctx.rect((0 + 90 * (indexOfPlayerPosition - 1)), 540, 90, 90);
                 ctx.fillStyle = '#FFFFFF';
@@ -140,7 +158,8 @@ $(document).keydown(function (event) {
                     currentLevel = 1;
                     gameoverAnimeStatus = 0;
                     indexOfGameoverString = 0;
-                    playerColor = theColor.green;
+                    //playerColor = theColor.green;
+                    playerImg = imgSrc.player1;
                     InGame();
                 }
                 break;
@@ -165,9 +184,11 @@ function executing() {
     };
     console.log("Score:" + currentScore);
     if (remainLive < 7 && remainLive > 3) {
-        playerColor = theColor.yellow;
+        //playerColor = theColor.yellow;
+        playerImg = imgSrc.player2;
     } else if (remainLive <= 3) {
-        playerColor = theColor.red;
+        //playerColor = theColor.red;
+        playerImg = imgSrc.player3;
     }
     if (theNextOneEssential % 3 != 0) {
         columnIndexOfEssentialGrid[essentialGridNumberFinal] = Math.floor(Math.random() * (playStyle + 1));
@@ -254,16 +275,29 @@ function executing() {
             columnIndexOfEssentialGrid[index] = 0;
         }
         rowIndexOfEssentialGrid[index]++;
-        ctx.beginPath();
+        if (remainLive != 0) {
+            var pImg = new Image();
+            pImg.src = playerImg;
+            pImg.onload = function () {
+                ctx.drawImage(pImg, (0 + 90 * indexOfPlayerPosition), 540, 90, 90);
+            };
+        }
+        /*ctx.beginPath();
         ctx.rect((0 + 90 * indexOfPlayerPosition), 540, 90, 90);
         ctx.fillStyle = playerColor;
         ctx.fill();
-        ctx.closePath();
+        ctx.closePath();*/
         $("#theScore").text("Score: " + currentScore);
         $("#remainLive").text("Remain Live: " + remainLive);
         if (remainLive == 0) {
+            //ctx.clearRect(0 , 0 , 450, 630);
             var snd = new Audio("final_Project/sound_effect/destruction1.mp3");
             snd.play();
+            var pImg = new Image();
+            pImg.src = imgSrc.player_out;
+            pImg.onload = function () {
+                ctx.drawImage(pImg, (0 + 90 * indexOfPlayerPosition), 540, 90, 90);
+            };
             ctx.beginPath();
             ctx.rect(0, 0, 450, 630);
             ctx.fillStyle = theColor.black;
@@ -276,13 +310,13 @@ function executing() {
             ctx.fillStyle = theColor.white;
             ctx.fillText("Press SPACE to restart", 120, 350);
             gameStatus = 0;
-            if(highScore < currentScore){
+            if (highScore < currentScore) {
                 highScore = currentScore;
-                setTimeout(function(){
+                setTimeout(function () {
                     var snd2 = new Audio("final_Project/sound_effect/cheers2.mp3");
                     snd2.play();
                 }, 500);
-                $("#theHighScore").text("High Score: "+highScore);
+                $("#theHighScore").text("High Score: " + highScore);
             }
             clearInterval(gaming);
         }
@@ -325,7 +359,7 @@ function isOverlapping(index) {
         }
     } else {
         result = 0;
-        if(playMode == 2){
+        if (playMode == 2) {
             var snd = new Audio("final_Project/sound_effect/damage4.mp3");
             snd.play();
         }
